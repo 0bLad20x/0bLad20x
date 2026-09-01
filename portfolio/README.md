@@ -35,12 +35,14 @@ Detailed work packages live under [`playbook/`](playbook/README.md).
 
 ## Current portfolio build status
 
-| Project | WP1 | WP2 | WP3 | WP4 | Next |
-|---|---|---|---|---|---|
-| [Solana Token Observatory](https://github.com/0bLad20x/solana-token-observatory) | Done | Done | Done | [READY](reviews/solana-token-observatory-wp4.md) | WP5 |
-| Modelrail | Pending | Pending | Pending | Pending | Initial repository review |
-| LLM Model Pipeline | Pending | Pending | Pending | Pending | Initial repository review |
-| Mandate | Candidate | Candidate | Candidate | Candidate | Portfolio-fit review |
+| Project | WP1 | WP2 | WP3 | WP4 | WP5 | Next |
+|---|---|---|---|---|---|---|
+| [Solana Token Observatory](https://github.com/0bLad20x/solana-token-observatory) | Done | Done | Done | [READY](reviews/solana-token-observatory-wp4.md) | [Profile ready](reviews/solana-token-observatory-wp5.md) | Pin in GitHub UI |
+| Modelrail | Pending | Pending | Pending | Pending | Pending | Initial repository review |
+| LLM Model Pipeline | Pending | Pending | Pending | Pending | Pending | Initial repository review |
+| Mandate | Candidate | Candidate | Candidate | Candidate | Candidate | Portfolio-fit review |
+
+Curated project positioning and reusable CV/application copy live under [`projects/`](projects/).
 
 The project set is intentionally not final. A local project may replace a current candidate if it provides stronger or more complementary evidence.
 
@@ -53,6 +55,7 @@ The project set is intentionally not final. A local project may replace a curren
 5. **Use repository-specific depth.** A provider-oriented framework may warrant provider matrices and live smoke tests; a small application may only need one compact CI workflow.
 6. **Public exposure is a deliberate step.** Secret/history review, metadata, license decision, docs, and current evidence are checked before a private/local project becomes portfolio evidence.
 7. **This standard can change.** When a later repository reveals a better reusable pattern, update the playbook rather than silently changing the process for only one project.
+8. **Pins are earned, not filled.** Do not use profile pin slots for projects that have not reached the same evidence standard merely to make the profile look complete.
 
 ## How to use this directory
 
