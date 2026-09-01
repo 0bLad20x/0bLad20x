@@ -35,12 +35,12 @@ Detailed work packages live under [`playbook/`](playbook/README.md).
 
 ## Current portfolio build status
 
-| Project | WP1 | WP2 | WP3 | Next |
-|---|---|---|---|---|
-| [Solana Token Observatory](https://github.com/0bLad20x/solana-token-observatory) | Done | Done | Done | WP4 |
-| Modelrail | Pending | Pending | Pending | Initial repository review |
-| LLM Model Pipeline | Pending | Pending | Pending | Initial repository review |
-| Mandate | Candidate | Candidate | Candidate | Portfolio-fit review |
+| Project | WP1 | WP2 | WP3 | WP4 | Next |
+|---|---|---|---|---|---|
+| [Solana Token Observatory](https://github.com/0bLad20x/solana-token-observatory) | Done | Done | Done | [READY](reviews/solana-token-observatory-wp4.md) | WP5 |
+| Modelrail | Pending | Pending | Pending | Pending | Initial repository review |
+| LLM Model Pipeline | Pending | Pending | Pending | Pending | Initial repository review |
+| Mandate | Candidate | Candidate | Candidate | Candidate | Portfolio-fit review |
 
 The project set is intentionally not final. A local project may replace a current candidate if it provides stronger or more complementary evidence.
 
