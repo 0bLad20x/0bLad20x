@@ -25,3 +25,7 @@ Real-time monitoring and AI-assisted analysis system for emerging Solana tokens.
 ## Technologies
 
 Python · LLM APIs · Tool Calling · REST APIs · PostgreSQL · Git · GitHub
+
+## Portfolio Build
+
+This profile is being curated project by project. The current working standard, work packages, and build status are documented in [`portfolio/`](portfolio/README.md).
