@@ -1,16 +1,27 @@
-## Hi there 👋
+# AI Implementation & Automation
 
-<!--
-**0bLad20x/0bLad20x** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I build AI-powered systems from problem definition to working implementation.
 
-Here are some ideas to get you started:
+## Focus
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- AI Agents & LLM Applications
+- Process Automation
+- AI-assisted Software Development
+- Data & API Integration
+- Python
+- Applied AI Prototyping
+
+## Selected Projects
+
+### Solana Token Observatory
+Real-time monitoring and AI-assisted analysis system for emerging Solana tokens.
+
+→ [View Project](https://github.com/0bLad20x/solana-token-observatory)
+
+## How I Work
+
+**Problem → Requirements → Architecture → AI-assisted Implementation → Testing → Evaluation → Iteration**
+
+## Technologies
+
+Python · LLM APIs · Tool Calling · REST APIs · PostgreSQL · Git · GitHub
