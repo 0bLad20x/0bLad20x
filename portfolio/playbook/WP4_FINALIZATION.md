@@ -1,261 +1,69 @@
-# WP4 — Final Portfolio Review
+# WP4 — Final Review
 
 ## Goal
 
-Review the repository as a completely uninvolved external visitor and decide whether the current state is genuinely ready to be used as public portfolio evidence.
+Look at the finished repository once as an uninvolved external visitor and fix only the remaining friction that would stop us from linking it confidently from a profile or CV.
 
-WP4 has two equally important dimensions:
+WP4 is a review pass, not another build phase.
 
-1. **technical credibility** — the repository is accurate, reproducible, safe, and evidence-backed;
-2. **reader experience** — the repository is understandable, visually coherent, interesting to explore, and gives the reader a reason to continue.
+## Fresh-eye pass
 
-WP4 should primarily discover inconsistencies and presentation gaps. It is not a reason to redesign a working system.
+Start from the public GitHub page, not from project history.
 
-## Review mindset
+In the first 30–60 seconds, check:
 
-Assume the reviewer:
+- can I tell what the project is and why it exists?
+- is there a strong real signal of the product or result?
+- do I understand what I can explore, run, or build on?
+- are the strongest project signals visible early enough?
+- is anything repeated, defensive, stale, or unnecessarily long?
 
-- has never seen the project before;
-- does not know its internal terminology;
-- may spend only 10–30 seconds initially;
-- may not know why the technical problem matters;
-- will continue only if the repository earns their attention;
-- may be a recruiter, engineering manager, developer, or technically curious user.
+Then follow the natural rabbit holes:
 
-Do not mentally fill in missing explanations from project history.
+- README → deeper docs;
+- docs → relevant implementation where useful;
+- claims → tests, CI, runtime evidence, or source.
 
-## Reader-experience audit
+The README does not need to contain every technical detail if the deeper path is clear.
 
-### First 10 seconds — orientation
+## Verify the public state
 
-Without scrolling deeply, can the visitor answer:
+Check only the things that can invalidate the presentation:
 
-- [ ] What kind of project is this?
-- [ ] What central problem does it address?
-- [ ] What is the useful/interesting result?
-- [ ] Is there a visual or concrete signal that the project actually exists and works?
+- important links and visuals work;
+- setup/runtime commands match the current repository;
+- the documented product matches the current code;
+- important checks on `main` are green/current;
+- no known sensitive material is exposed;
+- GitHub description/topics/preview still fit;
+- current limitations are not hidden.
 
-The first screen should create orientation before introducing dense implementation details.
+Where practical, try the simplest clean setup/run path.
 
-### First 30–60 seconds — curiosity
+## Delete pass
 
-Can the visitor answer:
+WP4 should ask not only "what is missing?" but also:
 
-- [ ] Why was this worth building?
-- [ ] What can I do, inspect, explore, or learn with it?
-- [ ] What makes the problem non-trivial?
-- [ ] What is distinctive about the solution?
-- [ ] Where should I click/read next if I want more depth?
+> What can be removed, merged, or moved deeper without losing understanding?
 
-A technically correct README can still fail WP4 if it is dry, abstract, or requires too much context before becoming interesting.
+Prefer a shorter path to the interesting parts over another layer of explanation.
 
-### Progressive depth
+## Result
 
-Check that the narrative roughly moves through:
+Use a simple final decision:
 
-```text
-what is it?
-↓
-why does it matter?
-↓
-what can it do?
-↓
-show me something real
-↓
-how does it work?
-↓
-what is technically interesting?
-↓
-how can I run / inspect it?
-↓
-what is proven, limited, or extensible?
-```
-
-The exact headings are flexible. The reader journey is not.
-
-## Visual review
-
-Every major visual should have a job.
-
-Check:
-
-- [ ] hero screenshot/demo loads and is legible;
-- [ ] screenshot captions explain what the reader is seeing;
-- [ ] GIF/video demonstrates behavior rather than acting as decoration;
-- [ ] architecture diagrams answer a concrete question;
-- [ ] visuals are placed near the text they clarify;
-- [ ] the README is not dominated by badges or decorative graphics;
-- [ ] light/dark rendering remains usable where relevant.
-
-Ask of every image:
-
-> What does this help an uninvolved reader understand faster than text alone?
-
-If the answer is unclear, remove or replace it.
-
-## Use-case and exploration review
-
-The repository should make its usefulness tangible.
-
-Check whether a reader can identify at least one of:
-
-- a concrete use case;
-- an example workflow;
-- an input → system → output path;
-- a meaningful UI interaction;
-- an API/CLI example;
-- a research or engineering question the project helps answer.
-
-For libraries/frameworks, explain what someone could build on top of the current abstraction.
-
-For applications, explain what the user can observe or accomplish now.
-
-## Vision / foundation review
-
-A good portfolio project may also show where its architecture could lead.
-
-Check:
-
-- [ ] current capability is clearly separated from future potential;
-- [ ] possible extensions follow naturally from existing architecture;
-- [ ] the text explains why the current design is a useful foundation;
-- [ ] no speculative feature is presented as implemented;
-- [ ] vision is concise enough that it strengthens rather than dilutes the current project.
-
-Useful pattern:
-
-```text
-Today: what works
-↓
-Foundation: what abstraction/capability now exists
-↓
-Possible extensions: what could be added without redefining the project
-```
-
-## Fresh-eye technical review
-
-Read the repository from the top without relying on project history.
-
-Check:
-
-- [ ] repository name is understandable;
-- [ ] GitHub description matches the README;
-- [ ] internal and external links work;
-- [ ] architecture diagrams render;
-- [ ] installation commands match current files;
-- [ ] runtime commands still exist;
-- [ ] test/CI commands match the repository;
-- [ ] project-status claims are current;
-- [ ] limitations/non-goals are visible;
-- [ ] deep docs are linked rather than duplicated unnecessarily;
-- [ ] internal jargon is introduced only after its meaning is clear.
-
-## Reproducibility review
-
-Where practical, validate from a clean environment:
-
-```text
-clone
-→ create environment
-→ install
-→ run deterministic checks
-→ start the simplest supported entry point
-```
-
-Do not require paid/live providers merely to call a repository reproducible. Document external prerequisites explicitly.
-
-## GitHub presentation review
-
-- [ ] description;
-- [ ] topics;
-- [ ] homepage decision;
-- [ ] license decision;
-- [ ] README;
-- [ ] screenshots/GIFs;
-- [ ] current `main` CI state;
-- [ ] issue tracker is not dominated by accidental/internal noise;
-- [ ] default branch is correct.
-
-## Evidence review
-
-For every prominent claim, ask:
-
-1. Where can an external reviewer verify this?
-2. Is the evidence current?
-3. Does a screenshot imply more than it proves?
-4. Does CI actually prove the advertised property?
-5. Are integration/runtime claims separated from deterministic checks?
-6. Is a future possibility clearly marked as future rather than current functionality?
-
-Rewrite or remove claims that cannot be defended.
-
-## Public-readiness review for private/local projects
-
-Before changing visibility:
-
-- [ ] repeat the WP2 secret/history audit;
-- [ ] inspect tracked, ignored, and untracked local state;
-- [ ] verify no local datasets/account artifacts are included unintentionally;
-- [ ] confirm license decision;
-- [ ] confirm documentation does not expose private infrastructure;
-- [ ] confirm screenshots do not expose sensitive information.
-
-## Portfolio signal review
-
-Before calling the repository finished, be able to state in one sentence:
-
-> What capability does this repository prove about the author that another featured repository does not?
-
-If the answer is unclear, improve positioning rather than inventing functionality.
-
-## Acceptance criteria
-
-- [ ] Repository is understandable without project history.
-- [ ] The opening gives a justified reason to keep reading.
-- [ ] A reader can identify what they can explore, run, inspect, or build on.
-- [ ] Visuals materially improve comprehension.
-- [ ] Technical depth appears after sufficient orientation.
-- [ ] Current capability and future potential are clearly separated.
-- [ ] Current `main` is the intended presentation state.
-- [ ] Important automated checks are green.
-- [ ] Documentation commands are current.
-- [ ] No known sensitive material is exposed.
-- [ ] Prominent claims are evidence-backed.
-- [ ] The project's distinct portfolio signal can be stated clearly.
-- [ ] No unnecessary portfolio-only architecture has been introduced.
-- [ ] Repository is ready to link directly from profile/CV.
-
-## Required outcome
-
-End WP4 with exactly one readiness class:
-
-- **READY** — suitable for profile/CV use;
-- **READY WITH LIMITATIONS** — usable with explicit documented limitations;
+- **READY** — comfortable to link directly as portfolio evidence;
 - **NOT READY** — concrete blockers remain.
 
-If the result is not `READY`, list the blockers explicitly rather than using vague status language.
+A READY repository may still have clearly documented limitations. Limitations are not automatically blockers.
 
-## WP4 output format
+If something is not ready, list the concrete blockers. Do not create process work to make the review look complete.
 
-For consistency, record:
+## Done when
 
-```text
-Readiness: READY | READY WITH LIMITATIONS | NOT READY
-
-Reader experience:
-- strengths
-- remaining friction
-
-Technical/public readiness:
-- strengths
-- blockers or limitations
-
-Evidence:
-- key checks / links / artifacts
-
-Portfolio signal:
-- one sentence
-
-Changes made in WP4:
-- only concrete corrections discovered by the audit
-```
+- [ ] The repository works as a first impression without prior context.
+- [ ] The README is concise enough that the strongest signals are not buried.
+- [ ] Deeper technical material is reachable without being duplicated everywhere.
+- [ ] Public claims, commands, visuals, and evidence match the current repository.
+- [ ] No real safety/reproducibility blocker remains.
+- [ ] We would be comfortable sending the repository link directly to a recruiter or engineer.

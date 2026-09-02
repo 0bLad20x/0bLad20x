@@ -1,215 +1,104 @@
-# WP1 — Presentation & README
+# WP1 — Presentation
 
 ## Goal
 
-Make the repository immediately understandable **and worth exploring** to a reader with no project history.
+Make the project understandable and interesting to someone who has no prior context.
 
-A strong portfolio README should answer four questions quickly:
+WP1 is not about making the repository sound impressive. It is about finding the strongest real signals in the project and presenting them with the least friction.
 
-1. **What is this?**
-2. **Why does it exist?**
-3. **What can I see or do with it?**
-4. **Why is this technically interesting enough to keep reading?**
+## Start by reading the project
 
-WP1 is presentation/documentation work. It must not change application behavior merely to improve portfolio appearance.
+Before rewriting the README, inspect the implementation, tests, existing docs, runtime behavior, and available visuals.
 
-## Entry criteria
+Identify:
 
-- The project has a coherent purpose.
-- There is enough implementation to state what it actually does.
-- Existing technical documentation can be inspected and preserved.
-- At least one useful visual, example, trace, output, or architecture view can be shown when the project benefits from it.
+- what the project actually does end to end;
+- what a user can see, run, explore, or build on;
+- the strongest product experience;
+- the strongest engineering decisions;
+- which details are useful hooks and which belong only in a technical rabbit hole;
+- what is already visually demonstrable.
 
-## Questions to answer first
+Do not assume the most heavily documented part of the current README is the most interesting part of the project.
 
-1. What problem does the project solve?
-2. Why is that problem non-trivial or interesting?
-3. What is the one-sentence project definition?
-4. What working end-to-end behavior exists today?
-5. What can a visitor actually explore, run, inspect, or learn from this repository?
-6. What did the author actually design and implement?
-7. What role did AI-assisted coding play?
-8. Which public claims can be verified from the repository?
-9. What is explicitly outside scope?
-10. What broader use, extension, or foundation does the current system naturally enable without pretending those future capabilities already exist?
+## README job
 
-## Reader journey
+The first screen or two should answer:
 
-Design the README for progressive depth rather than one flat documentation dump.
+1. What is this?
+2. Why does it exist?
+3. What can I see or do with it?
+4. What makes it worth exploring further?
 
-### 0–10 seconds — category + promise
+Then add enough depth to explain the system at a high level and expose the most interesting technical signals.
 
-The visitor should understand the project category and central value proposition before scrolling deeply.
+A typical flow may be:
 
 ```text
-Project name
+name + one sentence
 ↓
-One strong sentence
+strong visual / concrete result
 ↓
-Visual proof / product view / result
+problem and product experience
+↓
+how it works at a glance
+↓
+selected engineering highlights
+↓
+run / verify / deeper docs
 ```
 
-Avoid opening with implementation vocabulary that only makes sense after the reader already understands the problem.
+This is a writing guide, not a required heading template.
 
-### 10–30 seconds — problem + concrete value
+## Progressive depth
 
-Explain:
+Keep the README focused on orientation and the main story. Put detailed contracts, algorithms, data semantics, provider behavior, or subsystem internals in `docs/` when they are useful there.
 
-- why the project exists;
-- what pain, ambiguity, scale problem, or missing capability motivated it;
-- what the system does differently or usefully;
-- what the reader can explore in the repository.
-
-### 30–60 seconds — make it tangible
-
-Use concrete material such as:
-
-- screenshots;
-- short GIFs;
-- before/after or input/output examples;
-- short traces;
-- one small architecture/data-flow diagram;
-- realistic use cases;
-- a compact feature/highlight list.
-
-The visual should **explain something**, not merely decorate the page.
-
-### 1–3 minutes — technical credibility
-
-Then expose:
-
-- system architecture;
-- important design decisions;
-- data/model boundaries;
-- author contribution;
-- AI-assisted development;
-- tests/CI;
-- installation and runtime;
-- detailed documentation.
-
-## Recommended README structure
-
-The exact headings may vary, but the narrative should normally resemble:
+A good path is:
 
 ```text
-Project name
-↓
-One-sentence promise
-↓
-Hero visual / concrete evidence
-↓
-Why this exists
-↓
-What you can do / explore
-↓
-How the system works at a glance
-↓
-Interesting design choices / highlights
-↓
-What I built
-↓
-Architecture + technical depth
-↓
-Quick start / runtime
-↓
-Quality / evidence
-↓
-AI-assisted development
-↓
-Current scope, limitations, and possible extensions
-↓
-Detailed docs
+README claim
+→ relevant deep-dive doc
+→ source / test when someone wants proof
 ```
 
-Do not follow this mechanically when another ordering creates a clearer reader journey.
+Do not repeat the same explanation at every layer.
 
-## Make the repository enjoyable to read
+## Visuals
 
-"Enjoyable" does not mean exaggerated marketing. It means reducing cognitive friction and rewarding curiosity.
+Use visuals only when they communicate faster than prose:
 
-Use:
+- **Screenshot** — what the product/state looks like;
+- **GIF/video** — behavior, interaction, or motion;
+- **Diagram** — relationships, flow, or architecture.
 
-- short sections with clear questions or outcomes;
-- concrete examples before dense abstractions;
-- meaningful visuals at natural transition points;
-- captions that explain what a screenshot proves;
-- diagrams that answer one question at a time;
-- progressive disclosure: simple explanation first, implementation detail later;
-- links that let an interested reader intentionally go deeper.
+Prefer a few strong visuals over documenting every subsystem visually.
 
-Avoid long uninterrupted walls of text, duplicated documentation, badge walls, and unexplained internal terminology.
+## Writing quality
 
-## Vision and extension potential
+AI-assisted authorship is fine. AI-shaped redundancy is not.
 
-A portfolio project can explain what it is a **foundation for**, provided current capability and future potential are separated explicitly.
+Remove or compress:
 
-Good framing:
+- repeated explanations of the same idea;
+- generic statements that something is "interesting" instead of showing why;
+- excessive caveats and defensive wording;
+- speculative feature lists;
+- sections that exist only because a template suggested them.
 
-```text
-Current system
-→ proven capability
-→ natural extension / broader application
-```
+Current capability should remain clearly separate from possible future use.
 
-Examples:
+## AI-assisted development
 
-- a monitoring system can be a foundation for alerting, comparative research, or additional evidence sources;
-- a provider abstraction can support additional adapters or capability probes;
-- an execution runtime can support more provider surfaces without changing the core contract.
+If AI coding tools materially contributed, say so plainly and briefly. Do not hide it, and do not turn the section into a long responsibility defense. The repository itself should provide the engineering evidence.
 
-Do not present planned or hypothetical extensions as implemented functionality.
+## Done when
 
-## Actions
-
-- Write a one-sentence definition that assumes no internal project knowledge.
-- Explain the motivating problem before architecture details.
-- Identify one strong visual or concrete example that proves the project is real.
-- Add a concise `What you can do` / `What it does` / `Highlights` section appropriate to the project.
-- Show at least one end-to-end flow in plain language before deep architecture when useful.
-- Add `What I built` to make project-level contribution explicit.
-- Explain AI-assisted development accurately when relevant, including responsibility for requirements, architecture, decomposition, review, acceptance criteria, testing, and rejecting unsuitable generated implementations.
-- Add factual project status.
-- Preserve deep technical material below the reader layer or move it into `docs/` when appropriate.
-- Make limitations and non-goals explicit when they prevent misunderstanding.
-- Add a restrained `What this can enable`, `Possible extensions`, or `Why this matters` section only when the repository genuinely supports that abstraction.
-
-## Do not
-
-- invent features;
-- claim production readiness without evidence;
-- replace technical docs with recruiter-only prose;
-- use unverifiable marketing numbers;
-- put architecture detail before the reader knows what the product does;
-- hide material AI-assisted development;
-- use badges/icons as a substitute for explanation;
-- add decorative visuals that do not help comprehension;
-- turn speculative roadmap ideas into current-product claims.
-
-## Acceptance criteria
-
-- [ ] A new reader can explain the project after the first screen or two.
-- [ ] The opening gives a reason to keep reading, not merely a technical definition.
-- [ ] Problem, solution, and current capability are clearly separated.
-- [ ] At least one visual/example makes the system tangible when appropriate.
-- [ ] A reader can identify what they could explore, run, inspect, or reuse.
-- [ ] The narrative moves from simple explanation to technical depth.
-- [ ] `What I built` reflects actual contribution.
-- [ ] AI-assisted work is described accurately where relevant.
-- [ ] Existing technical depth is preserved.
-- [ ] Prominent claims map to evidence.
-- [ ] Screenshots/examples reflect the current implementation.
-- [ ] Future potential is clearly separated from current functionality.
-- [ ] Known limitations are not hidden.
-
-## PR scope
-
-Expected scope: README and presentation assets only unless a broken documentation path requires a minimal fix.
-
-Review focus:
-
-1. Can an uninvolved reader understand the project without prior context?
-2. Does the opening create justified curiosity?
-3. Are visuals explanatory rather than decorative?
-4. Are claims accurate and evidence-backed?
-5. Is technical documentation preserved?
-6. Did any product behavior change accidentally?
+- [ ] An uninvolved reader can explain the project after the first screen or two.
+- [ ] The opening shows a real product/result/behavior when the project has something visual to show.
+- [ ] The strongest project signals come from the implementation, not from inherited README emphasis.
+- [ ] The README progresses from simple understanding to optional technical depth.
+- [ ] Important claims are accurate and link naturally to deeper evidence.
+- [ ] Redundant detail has been removed or moved to `docs/`.
+- [ ] Visuals explain something rather than decorate the page.
+- [ ] Current capability, limitations, and future possibilities are not confused.
