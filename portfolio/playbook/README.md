@@ -1,151 +1,56 @@
 # Portfolio Repository Playbook
 
-This playbook is a reusable review and improvement process for turning an existing repository into credible public portfolio evidence.
+This playbook is a lightweight process for turning an existing repository into strong public portfolio evidence.
 
-A portfolio repository must do two things at once:
+It is deliberately small. The goal is not to make every repository look identical or to introduce portfolio-specific governance.
 
-1. **stand up technically** under inspection;
-2. **earn attention** from a reader who has no prior context.
+## Repository work packages
 
-The goal is not marketing polish detached from engineering. The goal is to make the engineering easy to understand, interesting to explore, and honest about what is proven.
+| WP | Main question |
+|---|---|
+| [WP1 — Presentation](WP1_PRESENTATION.md) | Can an uninvolved reader quickly understand the project and see why it is worth exploring? |
+| [WP2 — Public Hygiene](WP2_HYGIENE_METADATA.md) | Is the repository safe, intentional, and presentable in public? |
+| [WP3 — Evidence & Reproducibility](WP3_EVIDENCE_REPRODUCIBILITY.md) | Can the important technical claims be trusted and, where appropriate, reproduced? |
+| [WP4 — Final Review](WP4_FINALIZATION.md) | Would we now be comfortable sending this repository directly to a recruiter or engineer? |
 
-## Work packages
+After WP4, [`Portfolio Integration`](PORTFOLIO_INTEGRATION.md) decides whether and how the repository appears on the profile/CV. That is portfolio curation, not another repository engineering pass.
 
-| WP | Name | Main question |
-|---|---|---|
-| [WP1](WP1_PRESENTATION.md) | Presentation & README | Can an external reader quickly understand the project, see why it matters, and want to explore further? |
-| [WP2](WP2_HYGIENE_METADATA.md) | Hygiene & Metadata | Is the repository safe, clean, intentional, and discoverable? |
-| [WP3](WP3_QUALITY_AUTOMATION.md) | Repository Quality & Automation | Which existing quality signals should be exposed automatically, and how? |
-| [WP4](WP4_FINALIZATION.md) | Final Portfolio Review | Is the repository technically credible **and** compelling enough to use as direct portfolio evidence? |
-| [WP5](WP5_PROFILE_INTEGRATION.md) | Profile Integration | Should this project be featured, and what distinct signal does it add? |
+## Presentation depth
 
-Use [WP_TEMPLATE.md](WP_TEMPLATE.md) for project-specific work packages that do not belong in the universal sequence.
-
-## Principle: optimize the reader journey, not just the document
-
-A README is not a flat specification. A strong technical portfolio normally offers progressive depth:
+Use the natural GitHub layers rather than putting everything into the README:
 
 ```text
-What is this?
-↓
-Why should I care?
-↓
-Show me something real
-↓
-What can I do / explore?
-↓
-How does it work?
-↓
-What makes the engineering interesting?
-↓
-How can I run or inspect it?
-↓
-What is proven, limited, or extensible?
+GitHub surface
+name · description · topics · preview
+        ↓
+README
+what · why · product experience · main technical signals
+        ↓
+docs/
+technical rabbit holes
+        ↓
+source + tests
+implementation and verification
 ```
 
-The exact section names are not standardized. The questions the reader needs answered are.
+These are writing layers, not required README headings.
 
-Visuals, demos, examples, diagrams, and traces are useful when they shorten the path to understanding. They are not decoration requirements.
+## Core rules
 
-## Principle: current capability before future possibility
+**Inspect before presenting.** Do not inherit the existing README's emphasis automatically. Read the implementation and identify the strongest product and engineering signals first.
 
-A repository may explain what its architecture is a foundation for, but must distinguish:
+**Progressive depth.** A reader should get a useful picture quickly and be able to go deeper intentionally. Avoid explaining the same idea repeatedly at different depths.
 
-```text
-implemented now
-≠
-natural extension
-≠
-long-term vision
-```
+**Visuals must explain.** Use a screenshot for state, a GIF for behavior, and a diagram for relationships when those formats communicate faster than prose.
 
-Future potential should increase understanding of the current architecture, not inflate the feature list.
+**Evidence over decoration.** Tests, real behavior, reproducible commands, representative runtime evidence, and code matter more than badges or claims.
 
-## Principle: standardize evaluation, not machinery
+**Complexity must earn itself.** Before adding CI, Docker, a security workflow, another document, release automation, or any other layer, ask what concrete problem it solves. If the answer is unclear, omit it.
 
-Two repositories may both complete WP3 while ending with very different automation:
+## Extra work packages
 
-```text
-small application
-└── one deterministic CI workflow
-
-provider framework
-├── core CI
-├── provider contract matrix
-├── scheduled/manual live-provider smoke
-└── catalog/release workflow
-```
-
-Both can be correct if the automation maps to real repository responsibilities.
-
-## Evidence classes
-
-### Deterministic repository evidence
-
-Suitable for normal pull-request CI:
-
-- compilation/build from committed inputs;
-- unit tests;
-- contract tests;
-- lint/type/static checks;
-- schema or catalog validation;
-- CLI smoke checks without external services;
-- generated artifact validation from committed inputs.
-
-### Integration evidence
-
-Usually separate from core CI:
-
-- real PostgreSQL or other external database state;
-- real provider credentials;
-- browser sessions;
-- OAuth/account flows;
-- paid APIs;
-- third-party service availability.
-
-### Operational evidence
-
-Usually scheduled, release-triggered, or manually dispatched:
-
-- package publication;
-- deployment smoke tests;
-- scheduled provider compatibility;
-- vulnerability/dependency monitoring;
-- generated catalog refresh/publication.
-
-## Decision test for new repository machinery
-
-Before adding any workflow, gate, bot, generated artifact, or policy, answer:
-
-1. What concrete repository responsibility does it own?
-2. What recurring failure does it detect or prevent?
-3. What does a green result actually prove?
-4. Does it require live infrastructure or can it be deterministic?
-5. Is there a smaller mechanism that provides the same evidence?
-
-If the responsibility cannot be stated clearly, do not add the mechanism.
-
-## Decision test for presentation material
-
-Before adding a section, image, badge, diagram, or claim, answer:
-
-1. What question does this answer for an uninvolved reader?
-2. Does it make the project more concrete or merely longer?
-3. Does it show current reality or speculation?
-4. Is there evidence behind it?
-5. Would the README become clearer if this moved into deeper documentation instead?
-
-If it does not improve comprehension, confidence, or justified curiosity, omit it.
+Use [WP_TEMPLATE.md](WP_TEMPLATE.md) only for a real repository-specific responsibility such as deployment, package publication, provider compatibility, or generated catalog release. Do not create extra WPs just because the template exists.
 
 ## Updating this playbook
 
-The playbook is intentionally a working standard. Update it when a later project reveals a reusable improvement, for example:
-
-- better reader-flow or visual explanation patterns;
-- provider-specific path filters;
-- package-level contracts;
-- better supply-chain hardening;
-- release artifact verification;
-- a security practice that is useful across repositories.
-
-Do not back-port every newly discovered technique to every project automatically. Re-evaluate applicability first.
+Apply the process to real repositories first. Only promote a lesson into the playbook when it is clearly reusable. The playbook should stay smaller than the work it is helping to present.
