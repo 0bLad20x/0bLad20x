@@ -1,89 +1,31 @@
 # WPX — <Name>
 
-## Goal
+Use this only when the repository has a real responsibility that WP1–WP4 do not cover.
 
-State the single repository responsibility this work package improves.
+If the problem cannot be stated in one sentence, do not create the WP yet.
 
-## Why this exists
+## Problem
 
-Describe the concrete recurring problem, risk, missing evidence, or operational responsibility that justifies this WP.
+What concrete problem, risk, missing evidence, or operational responsibility justifies this work?
 
-If no concrete reason exists, stop here and do not create the WP.
+## Current state
 
-## Entry criteria
+What already exists in code, tests, docs, runtime behavior, or automation?
 
-- ...
-- ...
+## Change
 
-## Current evidence
-
-Record what already exists before adding anything:
-
-- **Code:**
-- **Tests:**
-- **Docs:**
-- **Automation:**
-- **Runtime/integration evidence:**
-
-## Questions
-
-1. ...
-2. ...
-3. ...
-
-## Proposed changes
-
-- ...
-- ...
-- ...
-
-## Explicit non-goals
-
-- no unrelated product changes;
-- no new governance unless this WP is specifically about governance;
-- no speculative infrastructure;
-- no claims without evidence.
-
-## Evidence boundary
-
-### This WP will prove
-
-- ...
-
-### This WP will not prove
-
-- ...
+What is the smallest change that solves the problem?
 
 ## Validation
 
-Commands/checks:
+How will we know it worked?
 
 ```text
-...
+commands / checks / observable result
 ```
 
-If real external infrastructure is required, state it explicitly.
+## Done when
 
-## Acceptance criteria
-
-- [ ] ...
-- [ ] ...
-- [ ] ...
-
-## PR scope
-
-Expected files/components:
-
-```text
-...
-```
-
-Review focus:
-
-1. ...
-2. ...
-3. ...
-
-## Reuse note
-
-State which parts of this WP are generic and which must be re-evaluated for the next repository.
+- [ ] the stated problem is solved;
+- [ ] no unrelated architecture/process was added;
+- [ ] the result is understandable and evidence-backed.
